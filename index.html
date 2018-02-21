@@ -1,48 +1,263 @@
 ---
-permalink: mentors
 ---
-
 {% include header.html %}
 
-<!--mentors' section-->
+<div class="rocket">
+	<a href="javascript:void(0);" id="rocketmeluncur" class="showrocket">
+		<div class="fire"></div>
+	</a>
+</div>
+
+<section class="image-slider slider-all-controls controls-inside pt0 pb0 height-70 parallax">
+	<ul class="slides">
+		<li class="overlay image-bg">
+			<div class="background-image-holder">
+				<img alt="image" class="background-image" src="img/slider/community-map.jpg">
+			</div>
+			<div class="container v-align-transform">
+				<div class="row text-center">
+					<div class="col-md-10 col-md-offset-1">
+						<h2 class="mb-xs-16">Google Code-In with FOSSASIA 2017/2018<br class="hidden-sm">A Fun-Contest with Inspiring Students and Mentors from Around the World</h2>
+						<p class="lead mb40">
+							Participate in  the FOSSASIA Community!
+						</p>
+						<a class="btn btn-lg btn-filled" href="https://codein.withgoogle.com/organizations/fossasia/">Learn More</a>
+					</div>
+				</div>
+			</div>
+		</li>
+
+		<li class="overlay image-bg">
+			<div class="background-image-holder">
+				<img alt="image" class="background-image" src="img/slider/group-photo.jpg">
+			</div>
+			<div class="container v-align-transform ">
+				<div class="row text-center">
+					<div class="col-md-10 col-md-offset-1">
+						<h2 class="mb-xs-16">Asia's Premier Developer Events with FOSSASIA<br class="hidden-sm">Join the FOSSASIA Summit in Singapore, Jugaadfest in India or the OpenTechSummit in China</h2>
+						<p class="lead mb40">
+							Bringing together an Inspiring Community. Check out..<br>
+						</p>
+						<a class="btn btn-lg btn-filled" href="https://2018.fossasia.org/">FOSSASIA Summit</a>
+						<a class="btn btn-lg btn-filled" href="https://jugaadfest.com/">Jugaadfest India</a>
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+</section>
+
+<!-- Placeholder -->
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4">
+				<a href="https://gci17.fossasia.org/students"><h2 class="number">899 students</h2></a>
+				<p>
+					899 students participated in FOSSASIA Google Code-In 2017/18. 400+ students completed tasks successfully. Many students made their way in contributing to Open Source projects for the first time.
+				</p>
+			</div>
+			<div class="col-sm-4">
+				<a href="https://codein.withgoogle.com/organizations/fossasia/"><h2 class="number">1500+ Tasks</h2></a>
+				<p>
+					1549 tasks were completed this year, from blog post to creating website to developing SUSI.AI.
+				</p>
+			</div>
+			<div class="col-sm-4">
+				<a href="https://github.com/fossasia/gci17.fossasia.org/graphs/contributors"><h2>91 mentors</h2></a>
+				<p>
+					Mentors are developers, engineers, university students, professors, and generally contributors who love to share and be a part of our open source community. They help creating better software for a better and just world.
+				</p>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<!-- Winners, Finalists & Contrinution Winners-->
 <section class="bg-secondary">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
-				<h2>mentors for you</h2>
+				<h2 class="uppercase mb16">Winners</h2>
+			</div>
+		</div>
+		<div class="col-sm-12 text-center spread-children-large mentor-list">
+			{% for student in site.data.students %}
+			{% if student.winner %}
+			<div class="card single-mentor">
+				{% if student.image %}
+				<img src="img/students/{{student.image}}" alt="{{ student.name }}">
+				{% else %}
+				<img src="img/students/member.png" alt="{{ student.name }}">
+				{% endif %}
+				<br>
+				<p class="person-name">{{ student.name }}</p><br>
+				<ul class="list-inline social-list social-overlay-list ">
+					{% if student.github %}
+					<a href="https://github.com/{{student.github}}" class="icon-a">
+						<i class="icon-i fa fa-github fa-2x" aria-hidden="true"></i>
+					</a>
+					{% endif %}
+					{% if student.twitter %}
+					<a href="https://twitter.com/{{ student.twitter }}" class="icon-a">
+						<i class="icon-i fa fa-twitter fa-2x" aria-hidden="true"></i>
+					</a>
+					{% endif %}
+					{% if student.blog %}
+					<a href="https://{{ student.blog }}" class="icon-a">
+						<i class="icon-i fa fa-rss fa-2x" aria-hidden="true"></i>
+					</a>
+					{% endif %}
+					{% if student.facebook %}
+					<a href="https://facebook.com/{{ student.facebook }}" class="icon-a">
+						<i class="icon-i fa fa-facebook fa-2x" aria-hidden="true"></i>
+					</a>
+					{% endif %}
+				</ul>
+			</div>
+			{% endif %}
+			{% endfor %}
+		</div>
+
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+				<h3 class="uppercase mb16">Finalist Winners</h3>
+			</div>
+		</div>
+		<div class="col-sm-12 text-center spread-children-large mentor-list">
+			{% for student in site.data.students %}
+			{% if student.finalist %}
+			<div class="card single-mentor">
+				{% if student.image %}
+				<img src="img/students/{{student.image}}" alt="{{ student.name }}">
+				{% else %}
+				<img src="img/students/member.png" alt="{{ student.name }}">
+				{% endif %}
+				<br>
+				<p class="person-name">{{ student.name }}</p><br>
+				<ul class="list-inline social-list social-overlay-list ">
+					{% if student.github %}
+					<a href="https://github.com/{{student.github}}" class="icon-a">
+						<i class="icon-i fa fa-github fa-2x" aria-hidden="true"></i>
+					</a>
+					{% endif %}
+					{% if student.twitter %}
+					<a href="https://twitter.com/{{ student.twitter }}" class="icon-a">
+						<i class="icon-i fa fa-twitter fa-2x" aria-hidden="true"></i>
+					</a>
+					{% endif %}
+					{% if student.blog %}
+					<a href="https://{{ student.blog }}" class="icon-a">
+						<i class="icon-i fa fa-rss fa-2x" aria-hidden="true"></i>
+					</a>
+					{% endif %}
+					{% if student.facebook %}
+					<a href="https://facebook.com/{{ student.facebook }}" class="icon-a">
+						<i class="icon-i fa fa-facebook fa-2x" aria-hidden="true"></i>
+					</a>
+					{% endif %}
+				</ul>
+			</div>
+			{% endif %}
+			{% endfor %}
+		</div>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+				<h4 class="uppercase mb16">Contribution Winners</h4>
+			</div>
+		</div>
+		<div class="col-sm-12 text-center spread-children-large mentor-list">
+			{% for student in site.data.students %}
+			{% if student.contributionWinner %}
+			<div class="card single-mentor">
+				{% if student.image %}
+				<img src="img/students/{{student.image}}" alt="{{ student.name }}">
+				{% else %}
+				<img src="img/students/member.png" alt="{{ student.name }}">
+				{% endif %}
+				<br>
+				<p class="person-name">{{ student.name }}</p><br>
+				<ul class="list-inline social-list social-overlay-list ">
+					{% if student.github %}
+					<a href="https://github.com/{{student.github}}" class="icon-a">
+						<i class="icon-i fa fa-github fa-2x" aria-hidden="true"></i>
+					</a>
+					{% endif %}
+					{% if student.twitter %}
+					<a href="https://twitter.com/{{ student.twitter }}" class="icon-a">
+						<i class="icon-i fa fa-twitter fa-2x" aria-hidden="true"></i>
+					</a>
+					{% endif %}
+					{% if student.blog %}
+					<a href="https://{{ student.blog }}" class="icon-a">
+						<i class="icon-i fa fa-rss fa-2x" aria-hidden="true"></i>
+					</a>
+					{% endif %}
+					{% if student.facebook %}
+					<a href="https://facebook.com/{{ student.facebook }}" class="icon-a">
+						<i class="icon-i fa fa-facebook fa-2x" aria-hidden="true"></i>
+					</a>
+					{% endif %}
+				</ul>
+			</div>
+			{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+</section>
+
+<!-- Map -->
+<section class="bg-map">
+	<div class="container" id="map-sec">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h4 class="uppercase mb16">Community Connect</h4>
+			</div>
+			<div id="map"></div>
+		</div>
+	</div>
+</section>
+
+
+<!-- Mentors -->
+<section class="bg-secondary" id="mentors">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+				<h2 class="animated fadeIn">Mentors for you</h2>
 			</div>
 		</div>
 		<div class="row mb64 mb-xs-24 mentor-list">
 			<div class="col-sm-12 text-center spread-children-large">
-				{% for mentor in site.data.mentors %}
+				{% for mentor in site.data.mentors limit:30 %}
 					<div class="card single-mentor">
-
 						{% if mentor.image %}
-								<img class="img" src="img/mentors/{{mentor.image}}" alt="{{ mentor.name }}">
+								<img src="img/mentors/{{mentor.image}}" alt="{{ mentor.name }}">
 						{% else %}
 							<img src="img/mentors/member.png" alt="{{ mentor.name }}">
 						{% endif %}
 						<br>
-						<p class="mentor-name">{{ mentor.name }}</p><br>
-
-						<ul class="list-inline social-list social-overlay-list">
+						<p class="person-name">{{ mentor.name }}</p><br>
+						<ul class="list-inline social-list social-overlay-list ">
 							{% if mentor.github %}
 								<a href="https://github.com/{{mentor.github}}" class="icon-a">
 									<i class="icon-i fa fa-github fa-2x" aria-hidden="true"></i>
 								</a>
-							{% endif %}
-							{% if mentor.twitter %}
-								<a href="https://twitter.com/@{{mentor.twitter}}" class="icon-a">
+
+								{% endif %}
+								{% if mentor.twitter %}
+								<a href="https://twitter.com/{{ mentor.twitter }}" class="icon-a">
 									<i class="icon-i fa fa-twitter fa-2x" aria-hidden="true"></i>
 								</a>
-							{% endif %}
-							{% if mentor.blog %}
-								<a href="https://{{mentor.blog}}" class="icon-a">
+								{% endif %}
+								{% if mentor.blog %}
+								<a href="https://{{ mentor.blog }}" class="icon-a">
 									<i class="icon-i fa fa-rss fa-2x" aria-hidden="true"></i>
 								</a>
-							{% endif %}
-							{% if mentor.facebook %}
-								<a href="https://facebook.com/{{mentor.github}}" class="icon-a">
+								{% endif %}
+								{% if mentor.facebook %}
+								<a href="https://facebook.com/{{ mentor.facebook }}" class="icon-a">
 									<i class="icon-i fa fa-facebook fa-2x" aria-hidden="true"></i>
 								</a>
 							{% endif %}
@@ -51,11 +266,70 @@ permalink: mentors
 				{% endfor %}
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+				<a class="mb0 btn btn-lg btn-filled" href="{{ baseurl }}./mentors">More</a>
+			</div>
+		</div>
 	</div>
 </section>
-<!--End of mentors' section-->
 
-<!--Typed-->
+<!-- Students -->
+<section class="bg-student" id="students">
+	<div class="container">
+
+		<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+			<h2 class="animated fadeIn">Students just like you.</h2>
+		</div>
+			<div class="col-sm-12 text-center spread-children-large mentor-list">
+				{% for student in site.data.students limit:11 %}
+				<div class="card single-mentor">
+					{% if student.image %}
+					<img src="img/students/{{student.image}}" alt="{{ student.name }}">
+					{% else %}
+					<img src="img/students/member.png" alt="{{ student.name }}">
+					{% endif %}
+					<br>
+					<p class="person-name">{{ student.name }}</p><br>
+					<ul class="list-inline social-list social-overlay-list">
+						{% if student.github %}
+						<a href="https://github.com/{{student.github}}" class="icon-a">
+							<i class="icon-i fa fa-github fa-2x" aria-hidden="true"></i>
+						</a>
+						{% endif %}
+						{% if student.twitter %}
+						<a href="https://twitter.com/@{{student.twitter}}" class="icon-a">
+							<i class="icon-i fa fa-twitter fa-2x" aria-hidden="true"></i>
+						</a>
+						{% endif %}
+						{% if student.blog %}
+						<a href="https://{{student.blog}}" class="icon-a">
+							<i class="icon-i fa fa-rss fa-2x" aria-hidden="true"></i>
+						</a>
+						{% endif %}
+						{% if student.facebook %}
+						<a href="https://facebook.com/{{student.facebook}}" class="icon-a">
+							<i class="icon-i fa fa-facebook fa-2x" aria-hidden="true"></i>
+						</a>
+						{% endif %}
+					</ul>
+				</div>
+				{% endfor %}
+		  </div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+				<p class="mb40 mb-xs-24">
+					Students participated in Google Code-in 2017 with FOSSASIA, just like you :)
+				</p>
+				<a class="mb0 btn btn-lg btn-filled" href="{{ baseurl }}./students">More</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Thanks -->
 <section class="bg-dark" style="height: 264px;">
 	<div class="container">
 		<div class="text-center">
@@ -64,5 +338,389 @@ permalink: mentors
 		</div>
 	</div>
 </section>
-<!--End of typed-->
+
+<section id="projects">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h4 class="uppercase mb16 animated fadeIn">Student Projects</h4>
+				<p class="lead mb64">Some projects developed by students during GCI</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="lightbox-grid square-thumbs">
+					<ul class="list-inline social-list social-overlay-list">
+							{% for project in site.data.student_projects %}
+							<li class="student_project">
+								<a href="{{project.github}}">
+									<div class="background-image-holder">
+											{% if project.image %}
+											<img title="{{project.name}} by {{project.author}}"
+														 class="background-image" src="img/projects/{{project.image}}">
+											{% else %}
+											<img title="{{project.name}} by {{project.author}}"
+														 class="background-image" src="img/projects/default.png">
+											{% endif %}
+											<span class="student-project-name"><span>By {{ project.author }}</span></span>
+									</div>
+								</a>
+							</li>
+							{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div><br><br><br>
+		<div class="col-sm-12 col-md-12 text-center">
+    			<a class="btn" data-toggle="popover" title="" data-placement="bottom left" href="https://github.com/fossasia/gci17.fossasia.org/blob/gh-pages/README.md">How to add a Student Project? (README.md)</a>
+ 		</div>
+	</div>
+</section>
+
+<!-- App Section -->
+<section id="fossasia-projects">
+	<section class="image-edge">
+    <div class="col-md-6 col-sm-4 p0">
+        <img alt="Screenshot" class="mb-xs-24" src="img/phone1.png">
+    </div>
+    <div class="container">
+        <div class="col-md-5 col-md-offset-1 col-sm-7 col-sm-offset-1 v-align-transform right">
+            <h1 class="large mb40 mb-xs-16">Open Event Android App Generator.</h1>
+            <h6 class="uppercase mb16">Technologies used: Java, Shell Script, Python, Javascript, HTML, CSS, JSON, Rest-APIs, Android SDK</h6>
+            <p class="lead mb40">
+                The Open Event Android App Generator consists of 2 main parts - the app generator itself that creates apps and the Android app for browsing any event. The generator can be installed as a stand alone application or integrated as a microservice into the Open Event Server. Updates to content of events are done automatically through Rest-APIs of the server.
+            </p>
+            <a class="btn-lg btn" href="https://github.com/fossasia/open-event-android">Github Repository <i class="fa fa-github fa-lg"></i></a>
+	    <a class="btn-lg btn" href="https://droidgen.eventyay.com/">Try it out!</a>
+        </div>
+    </div>
+
+</section>
+
+<section class="image-edge" id="sus">
+    <div class="col-md-6 col-sm-4 p0 col-md-push-6 col-sm-push-8">
+        <img alt="Screenshot" class="mb-xs-24" src="img/phone2.png">
+    </div>
+    <div class="container">
+        <div class="col-md-5 col-md-pull-0 col-sm-7 col-sm-pull-4 v-align-transform">
+            <h1 class="large mb40 mb-xs-16">SUSI.AI Android App</h1>
+            <h6 class="uppercase mb16">Technologies used: Kotlin, Java, Shell Script, Python, Javascript, HTML, CSS, JSON, Rest-APIs, Android SDK, APIs, Facebook, Slack</h6>
+            <p class="lead mb40">
+                The main feature of the app is to provide a conversational interface to provide intelligent answers using the loklak/AskSusi infrastructure. The app also offers login functionalities to connect to other services and stored personal data. Additionally, the application uses data provided by the user's phone to improve Susi answers. Geolocation information, for example, helps to offer better answers related to questions about "things nearby".
+            </p>
+            <a class="btn-lg btn" href="https://github.com/fossasia/susi_android">Github Repository <i class="fa fa-github fa-lg"></i></a>
+	    <a class="btn-lg btn" href="https://play.google.com/apps/testing/ai.susi">Try it out!</a>
+        </div>
+    </div>
+</section>
+<section id="other-projects">
+    <div class="container" >
+        <div class="row text-center" >
+            <div class="col-sm-4" style="height:350px">
+                <h2 class="number">Phimp.me</h2>
+                <p>
+                    Do you have many different apps in your Android Phone for the purpose of clicking, editing and sharing images? Hey guess what, now you don't need all of those because Phimp.me is here, with all the features packaged into one. So go and clean your phone memory to save your space for other useful purposes.
+                </p>
+                <div class="row" style="position:absolute; bottom:0px;left:30%">
+                    <div class="col-sm-12"><a class="btn" href="https://phimp.me">Learn More</a></div>
+                </div>
+            </div>
+            <div class="col-sm-4" style="height:350px">
+                <h2 class="number">PSLab Android</h2>
+                <p>
+                    PSLab is a tiny pocket science lab that provides an array of equipment for doing science and engineering experiments. It can function like an oscilloscope, waveform generator, frequency counter, programmable voltage and current source and also as a data logger.
+                </p>
+                <div class="row" style="position:absolute; bottom:0px; left:30%">
+                    <div class="col-sm-12"><a class="btn" href="http://pslab.fossasia.org">Learn More</a></div>
+                </div>
+            </div>
+            <div class="col-sm-4" style="height:350px">
+                <h2>Open Event Organizer App</h2>
+                <p>Open Event Organizer App provides event management features like:<br>
+					- Event manager log in and sign up<br>
+					- Manual attendee check in<br>
+					- Attendee check in through QR code scan<br>
+					- Basic event analytics
+                </p>
+                <div class="row" style="position:absolute; bottom:0px;left:30%">
+                     <div class="col-sm-12"><a class="btn" href="https://github.com/fossasia/open-event-orga-app">Learn More</a></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+</section>
+
+<!-- App Section Ends -->
+
+
+<!-- Blog -->
+<section class="bg-blog" id="student-blog">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h4 class="uppercase mb16">Blog Posts</h4>
+				<p class="lead mb64">Articles from the contributors</p>
+			</div>
+		</div>
+		{% for blog in site.data.blogs %}
+				{% capture modulo %}{{ forloop.index | modulo: 4 }}{% endcapture %}
+				{% if modulo == '1' %}
+		<div class="row">
+			{% endif %}
+			<div class="col-md-3">
+				<a href="{{blog.url}}" target="_blank">
+					<div class="image-tile outer-title text-center">
+						<div class="content">
+							<img src="img/blog/{{blog.img}}" height="240" width="240">
+							<div class="title mb16">
+								<h5 class="uppercase mb0">
+									<div class="blogorvideotitle">{{blog.title}}</div>
+								</h5>
+								<span>
+									<div class="nameofauthor">{{blog.author_name}}</div>
+								</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+			{% if modulo == '0' or forloop.last %}
+		</div>
+		{% endif %} {% endfor %}
+	</div>
+</section>
+
+<!-- Videos -->
+<section class="bg-videos" id="student-video">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h4 class="uppercase mb16">Videos</h4>
+				<p class="lead mb64">Videos from students</p>
+			</div>
+		</div>
+		{% for video in site.data.video %}
+			{% capture modulo %}{{ forloop.index | modulo: 4 }}{% endcapture %}
+			{% if modulo == '1' %}
+		<div class="row">
+			{% endif %}
+			<div class="col-md-3">
+				<a href="{{video.url}}" target="_blank">
+					<div class="image-tile outer-title text-center">
+						<div class="content">
+							<img src="img/video/{{video.img}}" height="240" width="240">
+							<div class="title mb16">
+								<h5 class="uppercase mb0">
+									<div class="blogorvideotitle">{{video.title}}</div>
+								</h5>
+								<span>
+									<div class="nameofauthor">{{video.author_name}}</div>
+								</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+			{% if modulo == '0' or forloop.last %}
+		</div>
+		{% endif %} {% endfor %}
+	</div>
+</section>
+
+<!-- parallax image? -->
+<section class="fullscreen image-bg parallax background-multiply">
+	<div class="background-image-holder">
+		<img alt="image" class="background-image" src="img/asia-bg.jpg">
+	</div>
+	<div class="container v-align-transform">
+		<div class="row">
+			<div class="col-sm-12">
+				<h1 class="bold mb0">FOSSASIA <br>Based in Asia.</h1>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="align-bottom text-center">
+		<a class="btn btn-white mb32" href="https://2017.fossasia.org">What happened in the last Summit?</a>
+		<ul class="list-inline social-list mb24">
+			<li>
+				<a href="https://twitter.com/fossasia">
+					<i class="fa fa-twitter"></i>
+				</a>
+			</li>
+			<li>
+				<a href="https://facebook.com/fossasia">
+					<i class="fa fa-facebook"></i>
+				</a>
+			</li>
+            <li>
+                <a href="https://www.instagram.com/fossasia">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/channel/UCQprMsG-raCIMlBudm20iLQ">
+                    <i class="fa fa-youtube" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://flickr.com/photos/fossasia">
+                    <i class="fa fa-flickr" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/fossasia">
+                    <i class="fa fa-github" aria-hidden="true"></i>
+                </a>
+			</li>
+			<li>
+                <a href="https://www.vk.com/fossasia">
+                    <i class="fa fa-vk" aria-hidden="true"></i>
+                </a>
+			</li>
+			<li>
+				<a href="https://www.reddit.com/r/FOSSASIA/">
+					<i class="fa fa-reddit"></i>
+				</a>
+			</li>
+
+		</ul>
+	</div>
+</section>
+
+<!-- Asccicasts -->
+<section class="bg-secondary" id="student-video">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h4 class="uppercase mb16">Asciicasts</h4>
+				<p class="lead mb64">Asciicasts from students</p>
+			</div>
+		</div>
+		{% for asciicast in site.data.asciicast %} {% capture modulo %}{{ forloop.index | modulo: 4 }}{% endcapture %} {% if modulo
+		== '1' %}
+		<div class="row">
+			{% endif %}
+			<div class="col-md-3">
+				<a href="{{asciicast.url}}" target="_blank">
+					<div class="image-tile outer-title text-center">
+						<div class="content">
+							<img width="212" height="119" src="{{asciicast.imgurl}}">
+							<div class="title mb16">
+								<h5 class="uppercase mb0">
+									<div class="asciicast">{{asciicast.title}}</div>
+								</h5>
+								<span>
+									<div class="maker">{{asciicast.maker}}</div>
+								</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+			{% if modulo == '0' or forloop.last %}
+		</div>
+		{% endif %} {% endfor %}
+	</div>
+</section>
+
+
+<!-- placeholder flickr feed -->
+<section>
+
+<div class="col-sm-12 text-center">
+			<h2 class="animated fadeIn">FOSSASIA Pictures</h2>
+			<p class="lead mb64">Improving People's Lives.</p>
+			<a class="btn btn-lg" target = "_blank" href="https://www.flickr.com/photos/fossasia/">see memories!</a>
+</div>
+
+<div id="flickrembed"></div><div style="position:absolute; top:-70px; display:block; text-align:center; z-index:-1;"><a href="https://youtubevideoembed.com">Embed Youtube</a></div><script src='https://flickrembed.com/embed_v2.js.php?source=flickr&layout=responsive&input=72157665486359899&sort=0&by=album&theme=default&scale=fill&limit=10&skin=default-light&autoplay=true'></script><small style="display: block; text-align: center; margin: 0 auto;">Powered by <a href="https://github.com/0x48piraj">flickr | 0x48piraj</a>.</small>
+</section>
+
+
+<!-- Placeholder connect -->
+<section class="cover fullscreen image-slider slider-arrow-controls controls-inside parallax">
+	<ul class="slides">
+		<li class="overlay image-bg">
+			<div class="background-image-holder">
+				<img alt="image" class="background-image" src="img/singapore.jpg">
+			</div>
+			<div class="container v-align-transform">
+				<div class="row">
+					<div class="col-sm-12 text-center">
+						<img alt="Logo" class="image-small" src="img/fossasia-light.png">
+					</div>
+				</div>
+
+			</div>
+			<div class="align-bottom text-center">
+				<a class="btn btn-white mb32" href="#social-links">Connect</a>
+				<ul class="list-inline social-list mb24">
+					<li>
+						<a href="https://twitter.com/fossasia">
+							<i class="fa fa-twitter"></i>
+						</a>
+					</li>
+					<li>
+						<a href="https://facebook.com/fossasia">
+							<i class="fa fa-facebook"></i>
+						</a>
+					</li>
+					<li>
+                        <a href="https://www.instagram.com/fossasia">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/channel/UCQprMsG-raCIMlBudm20iLQ">
+                            <i class="fa fa-youtube" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://flickr.com/photos/fossasia">
+                            <i class="fa fa-flickr" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/fossasia">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.vk.com/fossasia">
+                            <i class="fa fa-vk" aria-hidden="true"></i>
+                        </a>
+                    </li>
+		    <li>
+			    <a href="https://www.reddit.com/r/FOSSASIA/">
+				    <i class="fa fa-reddit" aria-hidden="true"></i>
+			    </a>
+		    </li>
+				</ul>
+			</div>
+		</li>
+	</ul>
+</section>
+
+<!--contributors section-->
+<section class="bg-secondary">
+	<div class="container">
+		<div class="col-sm-12 text-center">
+			<h2 class="animated fadeIn">Contributors</h2>
+			<p class="lead mb64">People who have made contributions to gci17.fossasia.org</p>
+			<a class="btn btn-lg" href="{{ baseurl }}./activities">view activities</a>
+		</div>
+		<div class="row text-center mentor-list" id="contributors"></div>
+
+		<div class="col-sm-12 col-md-12 text-center">
+	<a  class="btn" data-toggle="popover" title="" data-placement="bottom" href="https://blog.fossasia.org/open-source-developer-guide-and-best-practices-at-fossasia/">How can I be a contributor?</a>
+	<a  class="btn" data-toggle="popover" title="" data-placement="bottom" href="https://github.com/fossasia/gci17.fossasia.org">View the Github Repository <i class="fa fa-github fa-lg"></i></a>
+	 </div>
+	</div>
+</section>
+<!--End of contributors section-->
+
 {% include footer.html %}
