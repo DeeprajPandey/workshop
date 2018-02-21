@@ -1,0 +1,56 @@
+---
+permalink: participants
+---
+
+{% include header.html %}
+
+<section class="bg-secondary">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+				<h2>Participants</h2>
+			</div>
+		</div>
+		<div class="row mb64 mb-xs-24 mentor-list">
+			<div class="col-sm-12 text-center spread-children-large">
+				{% for participant in site.data.participants %}
+					<div class="card single-mentor">
+
+						{% if participant.image %}
+								<img class="img" src="img/participants/{{participant.image}}" alt="{{ participant.name }}">
+						{% else %}
+							<img src="img/participants/member.png" alt="{{ participant.name }}">
+						{% endif %}
+						<br>
+						<p class="mentor-name">{{ participant.name }}</p><br>
+
+						<ul class="list-inline social-list social-overlay-list">
+							{% if participant.github %}
+								<a href="https://github.com/{{participant.github}}" class="icon-a">
+									<i class="icon-i fa fa-github fa-2x" aria-hidden="true"></i>
+								</a>
+							{% endif %}
+							{% if participant.twitter %}
+								<a href="https://twitter.com/@{{participant.twitter}}" class="icon-a">
+									<i class="icon-i fa fa-twitter fa-2x" aria-hidden="true"></i>
+								</a>
+							{% endif %}
+							{% if participant.blog %}
+								<a href="https://{{participant.blog}}" class="icon-a">
+									<i class="icon-i fa fa-rss fa-2x" aria-hidden="true"></i>
+								</a>
+							{% endif %}
+							{% if participant.facebook %}
+								<a href="https://facebook.com/{{participant.facebook}}" class="icon-a">
+									<i class="icon-i fa fa-facebook fa-2x" aria-hidden="true"></i>
+								</a>
+							{% endif %}
+						</ul>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</section>
+
+{% include footer.html %}

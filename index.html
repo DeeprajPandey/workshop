@@ -2,44 +2,44 @@
 ---
 {% include header.html %}
 
-<!-- Mentors -->
+<!-- Participants -->
 <section class="bg-secondary" id="mentors">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
-				<h2 class="animated fadeIn">Mentors for you</h2>
+				<h2 class="animated fadeIn">Participants</h2>
 			</div>
 		</div>
 		<div class="row mb64 mb-xs-24 mentor-list">
 			<div class="col-sm-12 text-center spread-children-large">
-				{% for mentor in site.data.mentors limit:30 %}
+				{% for participant in site.data.participants limit:30 %}
 					<div class="card single-mentor">
-						{% if mentor.image %}
-								<img src="img/mentors/{{mentor.image}}" alt="{{ mentor.name }}">
+						{% if participant.image %}
+								<img src="img/participants/{{participant.image}}" alt="{{ participant.name }}">
 						{% else %}
-							<img src="img/mentors/member.png" alt="{{ mentor.name }}">
+							<img src="img/participants/member.png" alt="{{ participant.name }}">
 						{% endif %}
 						<br>
-						<p class="person-name">{{ mentor.name }}</p><br>
+						<p class="person-name">{{ participant.name }}</p><br>
 						<ul class="list-inline social-list social-overlay-list ">
-							{% if mentor.github %}
-								<a href="https://github.com/{{mentor.github}}" class="icon-a">
+							{% if participant.github %}
+								<a href="https://github.com/{{participant.github}}" class="icon-a">
 									<i class="icon-i fa fa-github fa-2x" aria-hidden="true"></i>
 								</a>
 
 								{% endif %}
-								{% if mentor.twitter %}
-								<a href="https://twitter.com/{{ mentor.twitter }}" class="icon-a">
+								{% if participant.twitter %}
+								<a href="https://twitter.com/{{ participant.twitter }}" class="icon-a">
 									<i class="icon-i fa fa-twitter fa-2x" aria-hidden="true"></i>
 								</a>
 								{% endif %}
-								{% if mentor.blog %}
-								<a href="https://{{ mentor.blog }}" class="icon-a">
+								{% if participant.blog %}
+								<a href="https://{{ participant.blog }}" class="icon-a">
 									<i class="icon-i fa fa-rss fa-2x" aria-hidden="true"></i>
 								</a>
 								{% endif %}
-								{% if mentor.facebook %}
-								<a href="https://facebook.com/{{ mentor.facebook }}" class="icon-a">
+								{% if participant.facebook %}
+								<a href="https://facebook.com/{{ participant.facebook }}" class="icon-a">
 									<i class="icon-i fa fa-facebook fa-2x" aria-hidden="true"></i>
 								</a>
 							{% endif %}
@@ -50,7 +50,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
-				<a class="mb0 btn btn-lg btn-filled" href="{{ baseurl }}./mentors">More</a>
+				<a class="mb0 btn btn-lg btn-filled" href="{{ baseurl }}./participants">More</a>
 			</div>
 		</div>
 	</div>
