@@ -25,4 +25,4 @@ To add yourself under the Participant list, open the file `participants.yml` in 
 - If you do not want to include your social media accounts or coordinates , please do not provide empty fields like `facebook:`.
 - Avoid using contractions such as *can't, don't,* etc. If there is no choice (e.g. the name has single quote mark) put double quotes (`"`) around that part.
 
-###:octocat:
+### :octocat:
