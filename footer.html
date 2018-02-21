@@ -1,0 +1,109 @@
+<!-- Footer -->
+			<footer class="footer-2 bg-dark" id="social-links">
+		   		<div class="container">
+					<div class="row">
+						<div class="col-sm-3 text-left">
+							<div class="vnu"><img alt="Logo" class="footer-logo" src="img/workshop-light.png"></div>
+						</div>
+						<div class="col-sm-3 text-left"></div>
+						<div class="col-sm-6 text-right">
+							<ul class="list-inline social-list" style="font-size: 17px;padding: 10.5px;">
+								<li>
+									<a href="https://twitter.com/DeeprajPandey">
+										<i class="fa fa-twitter"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://facebook.com/DeeprajPandey">
+										<i class="fa fa-facebook"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://plus.google.com/+DeeprajPandey">
+										<i class="fa fa-google" aria-hidden="true"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.linkedin.com/in/deeprajpandey/">
+										<i class="fa fa-linkedin" aria-hidden="true"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/DeeprajPandey">
+										<i class="fa fa-github" aria-hidden="true"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.instagram.com/DeeprajPandey">
+										<i class="fa fa-instagram" aria-hidden="true"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.reddit.com/u/DeeprajPandey/">
+										<i class="fa fa-reddit"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+		   </footer>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="js/typed.js"></script>
+		<script type="text/javascript">
+			Typed.new('.typed', {
+			strings: [ "Thank You For Contributing!", "योगदान करने के लिए धन्यवाद!", "Danke für den Beitrag!", "Dziękujemy za Twój wkład!", "貢献していただきありがとうございます!", "பங்களித்ததற்கு நன்றி!", "Tak for bidrag!", "Grazie per aver contribuito!", "Go raibh maith agat as ranníoc!",  "Merçi de contribuer!", "공헌 해 주셔서 감사합니다!", "অবদান রাখার জন্য আপনাকে ধন্যবাদ!", "දායක වූවාට ස්තුතියි!", "Gracias por contribuir!", "Спасибо Вам за Ваш вклад!", "Σας ευχαριστούμε για τη συμβολή!", "ขอบคุณสำหรับการมีส่วนร่วมกับเรา!", "Bedankt voor de bijdrage!", "Дякую за участь", "Ευχαριστώ για τη συμβολή!", "شكرا للمساهمة!", "Tibi gratias ob tuam contributionem!"],
+			typeSpeed: 0,
+			backDelay: 500,
+			startDelay: 1000,
+			loop: true,
+			loopCount: Infinity
+			});
+		</script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/lightbox.min.js"></script>
+		<script src="js/masonry.min.js"></script>
+		<script src="js/smooth-scroll.min.js"></script>
+		<script src="js/parallax.js"></script>
+		<script async defer src="https://apis.google.com/js/platform.js" ></script>
+		<script type="text/javascript">var issueArr = [];</script>
+		<script src="js/inview.js"></script>
+		<script src="js/scripts.js"></script>
+		<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+		<script type="text/javascript">
+			function googleTranslateElementInit() {
+				new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL }, 'google_translate_element');
+			}
+		</script>
+		<script type="text/javascript">
+        	/* Smooth Scroll */
+       		$('a[href*="#"]').not('[href="#"]')
+                                 .not('[href="#0"]')
+                                 .click(function(event) {
+                                     if (
+		  				location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+		  				&&
+		  				location.hostname == this.hostname
+		  			) {
+		  				var target = $(this.hash);
+		  				target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+		  				if (target.length) {
+		  					event.preventDefault();
+		  					$('html, body').animate({
+		  						scrollTop: target.offset().top
+		  					}, 1000, 'swing', function() {
+		  						var $target = $(target);
+		  						$target.focus();
+		  						if ($target.is(":focus")) {
+		  							return false;
+		  						} else {
+		  							$target.attr('tabindex','-1');
+		  							$target.focus();
+		  						};
+		  					});
+		  				}
+		  			}
+                                 });
+        </script>
+    </body>
+</html>
