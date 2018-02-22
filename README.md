@@ -4,7 +4,7 @@ This is a website hosted by [GitHub Pages](https://pages.github.com) which compl
 Users fork this repository and learn about (forking) branching, pulling in changes, pushing to a remote branch and submitting pull request(s).
 
 ## Adding a Participant
-To add yourself under the Participant list, open the file `participants.yml` in `_data` folder and please maintain the following format *EXACTLY* (replacing values where indicated):
+To add yourself under the Participant list, first add your image in `img/participants` folder, then open the file `participants.yml` in `_data` folder and please maintain the following format *EXACTLY* (replacing values where indicated):
 
 ```yaml
 - name: Participant's name
