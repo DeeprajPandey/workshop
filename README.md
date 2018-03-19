@@ -1,5 +1,5 @@
 # GitHub and Git Workshop
-This is a website hosted by [GitHub Pages](https://pages.github.com) which complements the introductory workshop on [git](https://git-scm.com/) and [GitHub](https://github.com).
+This is a website hosted by [GitHub Pages](https://pages.github.com) which complements the introductory workshop on [git](https://git-scm.com/) and [GitHub](https://github.com). It was used in the workshop I conducted in February which served as an introduction to version control for the participants.
 
 Users fork this repository and learn about (forking) branching, pulling in changes, pushing to a remote branch and submitting pull request(s).
 
