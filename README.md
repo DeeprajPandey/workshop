@@ -1,4 +1,4 @@
-# GitHub and Git Workshop
+# Git and GitHub Workshop
 This is a website hosted on [GitHub Pages](https://pages.github.com) which serves as an accompaniment to the introductory workshop on [git](https://git-scm.com/) and [GitHub](https://github.com).
 
 ## Adding a Participant
