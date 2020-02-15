@@ -1,7 +1,5 @@
 # GitHub and Git Workshop
-This is a website hosted by [GitHub Pages](https://pages.github.com) which complements the introductory workshop on [git](https://git-scm.com/) and [GitHub](https://github.com). It was used in the workshop I conducted in February which served as an introduction to version control for the participants.
-
-Users fork this repository and learn about (forking) branching, pulling in changes, pushing to a remote branch and submitting pull request(s).
+This is a website hosted on [GitHub Pages](https://pages.github.com) which serves as an accompaniment to the introductory workshop on [git](https://git-scm.com/) and [GitHub](https://github.com).
 
 ## Adding a Participant
 To add yourself under the Participant list, first add your image in `img/participants` folder, then open the file `participants.yml` in `_data` folder and please maintain the following format *EXACTLY* (replacing values where indicated):
@@ -22,7 +20,7 @@ To add yourself under the Participant list, first add your image in `img/partici
 - All images must be optimized before uploaded to the repository via commit or Pull Request. You may use any image optimizer of your choice.
 - All images must be in `img/participants`.
 - The images must be 240 x 240 pixels.
-- If you do not want to include your social media accounts or coordinates , please do not provide empty fields like `facebook:`.
+- If you do not want to include your social media accounts or coordinates, just skip that field.
 - Avoid using contractions such as *can't, don't,* etc. If there is no choice (e.g. the name has single quote mark) put double quotes (`"`) around that part.
 
 ### :octocat:
